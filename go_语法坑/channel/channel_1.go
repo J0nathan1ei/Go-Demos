@@ -1,11 +1,11 @@
-package channel
+package main
 
 import (
 	"fmt"
 	"time"
 )
 
-func init() {
+func init1() {
 	var c chan int = make(chan int) //  var 管道名 chan 传输类型 = make(chan 传输类型， 缓存个数)
 	defer close(c)                  // 使用完毕后关闭，关闭后不可在使用
 	// c <- 11                      // TODO fatal error: all goroutines are asleep - deadlock!
@@ -33,4 +33,8 @@ func prod(c chan int, n int) func() {
 			c <- i
 		}
 	}
+}
+
+func main(){
+	init1()
 }
