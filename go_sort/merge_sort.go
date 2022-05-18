@@ -29,15 +29,11 @@ func merge(left, right []int) []int {
 	}
 
 	if len(left) > 0 {
-		for _, v := range left {
-			res = append(res, v)
-		}
+		res = append(res, left...)
 	}
 
 	if len(right) > 0 {
-		for _, v := range right {
-			res = append(res, v)
-		}
+		res = append(res, right...)
 	}
 	return res
 }
